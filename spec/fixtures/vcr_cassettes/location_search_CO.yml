@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/api/v1/munchies?destination=pueblo,co&food=italian
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer HkYMLCcRCW00u5oDm8oJhouIollwNaxm0KeW-cx0iQk_JbqbV_aF1pjuv6ZpyJm9KIXxT5I-3ow-SJ2pblS1wLv1DzrutF-Y1ePpvgygVbj-y95p7wJoHLBGgcxmYnYx
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - openresty/1.21.4.3
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Routing-Service:
+      - routing-main--useast1-64569459dd-5p9ln; site=mobile_api_v1
+      X-B3-Sampled:
+      - '0'
+      X-Zipkin-Id:
+      - 868051f62a59cd3f
+      X-Tracing-Auth:
+      - Bi4eYNPbHaAOh3BcSdV6neU4Nm5xdyqSn9UwHuhEQRA
+      Content-Security-Policy:
+      - script-src 'none';
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-65-156-168-useast1bprod
+      X-Extlb:
+      - 10-65-156-168-useast1bprod
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 06 Aug 2024 15:23:43 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8222-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <html>
+          <head><title>Bad Request</title></head>
+          <body>
+            <h1>400 Bad Request</h1>
+            <p>Error served by routing service running on <tt>routing-main--useast1-64569459dd-5p9ln</tt></p>
+          </body>
+        </html>
+  recorded_at: Tue, 06 Aug 2024 15:23:43 GMT
+recorded_with: VCR 6.2.0
