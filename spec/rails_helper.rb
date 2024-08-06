@@ -6,6 +6,7 @@ require_relative '../config/environment'
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 VCR.configure do |config|
+  config.allow_http_connections_when_no_cassette = true
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
   config.filter_sensitive_data('<MAP_QUEST_API_KEY>') { Rails.application.credentials.api_key[:map_quest] }

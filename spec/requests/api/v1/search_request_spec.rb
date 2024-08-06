@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Yelp API" do
   it "returns city destination, forecast, and restaurant details" do 
-    VCR.use_cassette('yelp_api_CO') {
+    #VCR.use_cassette('yelp_api_CO') {
       get '/api/v1/munchies?destination=pueblo,co&food=italian'
 
       expect(response).to be_successful
@@ -13,7 +13,7 @@ describe "Yelp API" do
       expect(destination).to have_key(:id)
       expect(destination[:id]).to eq("null")
       expect(destination).to have_key(:type)
-      expect(destination[:type]).to eq("munchie")
+      expect(destination[:type]).to eq("search")
 
       expect(destination).to have_key(:attributes)
       expect(destination[:attributes]).to be_a(Hash)
@@ -39,6 +39,6 @@ describe "Yelp API" do
       expect(destination[:attributes][:restaurant][:rating]).to be_a(Integer)
       expect(destination[:attributes][:restaurant]).to have_key(:reviews)
       expect(destination[:attributes][:restaurant][:reviews]).to be_a(Integer)
-    }
+    #}
   end
 end

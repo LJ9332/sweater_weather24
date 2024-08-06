@@ -17,7 +17,7 @@ RSpec.describe Search do
       expect(munchie).to be_a(Search)
       expect(munchie.id).to eq('null')
       expect(munchie.type).to eq('munchie')
-      expect(munchie.destination).to eq('pueblo,co')
+      expect(munchie.destination_city).to eq(destination)
       expect(munchie.forecast).to eq(forecast)
       expect(munchie.restaurant).to eq(restaurant)
     }

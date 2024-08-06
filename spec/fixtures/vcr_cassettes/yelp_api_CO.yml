@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.mapquestapi.com/geocoding/v1/address?key=<MAP_QUEST_API_KEY>&location=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 06 Aug 2024 17:46:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '344'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - MapQuest
+      X-Request-Id:
+      - c4a6ca50-541b-11ef-924c-658f38139183
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"158-BSI//z022smqzxh3kgbjjXuTkNU"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjQwMCwiY29weXJpZ2h0Ijp7InRleHQiOiLCqSAyMDI0IE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsImltYWdlQWx0VGV4dCI6IsKpIDIwMjQgTWFwUXVlc3QsIEluYy4ifSwibWVzc2FnZXMiOlsiSWxsZWdhbCBhcmd1bWVudCBmcm9tIHJlcXVlc3Q6IEluc3VmZmljaWVudCBpbmZvIGZvciBsb2NhdGlvbiJdfSwib3B0aW9ucyI6eyJtYXhSZXN1bHRzIjotMSwiaWdub3JlTGF0TG5nSW5wdXQiOmZhbHNlfSwicmVzdWx0cyI6W3sicHJvdmlkZWRMb2NhdGlvbiI6e30sImxvY2F0aW9ucyI6W119XX0=
+  recorded_at: Tue, 06 Aug 2024 17:46:11 GMT
+recorded_with: VCR 6.2.0

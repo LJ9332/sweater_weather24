@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.yelp.com/api/v1/munchies?destination=pueblo,co&food=italian
+    uri: https://api.yelp.com/v3/businesses/search?categories=italian&location=pueblo,co
     body:
       encoding: US-ASCII
       string: ''
@@ -17,56 +17,238 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Connection:
       - keep-alive
-      Server:
-      - openresty/1.21.4.3
       Content-Type:
-      - text/html; charset=utf-8
-      X-Routing-Service:
-      - routing-main--useast1-64569459dd-5p9ln; site=mobile_api_v1
+      - application/json
+      Ratelimit-Resettime:
+      - '2024-08-07T00:00:00+00:00'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST,OPTIONS,GET,DELETE,PUT,PATCH
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization
+      X-Zipkin-Id:
+      - 34b11be9ae79507f
+      Access-Control-Max-Age:
+      - '1728000'
       X-B3-Sampled:
       - '0'
-      X-Zipkin-Id:
-      - 868051f62a59cd3f
+      Server:
+      - envoy
+      X-Routing-Service:
+      - routing-main--useast1-64569459dd-xztqj; site=public_api_v3
       X-Tracing-Auth:
-      - Bi4eYNPbHaAOh3BcSdV6neU4Nm5xdyqSn9UwHuhEQRA
-      Content-Security-Policy:
-      - script-src 'none';
+      - puGtsqGnIoXiiq7MUkfBsFcyrz0YfKGoTWN8EJgAhlw
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4996'
+      Access-Control-Allow-Credentials:
+      - 'true'
       X-Mode:
       - ro
       X-Proxied:
-      - 10-65-156-168-useast1bprod
+      - 10-65-154-95-useast1bprod
       X-Extlb:
-      - 10-65-156-168-useast1bprod
+      - 10-65-154-95-useast1bprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 06 Aug 2024 15:23:43 GMT
+      - Tue, 06 Aug 2024 16:46:42 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-den8222-DEN
+      - cache-den8232-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
+      Vary:
+      - Accept-Encoding
       Alt-Svc:
       - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
       Transfer-Encoding:
       - chunked
     body:
-      encoding: UTF-8
-      string: |-
-        <html>
-          <head><title>Bad Request</title></head>
-          <body>
-            <h1>400 Bad Request</h1>
-            <p>Error served by routing service running on <tt>routing-main--useast1-64569459dd-5p9ln</tt></p>
-          </body>
-        </html>
-  recorded_at: Tue, 06 Aug 2024 15:23:43 GMT
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "ohD11-Q1y0Y3tNy0LjyTqw", "alias": "la-forchetta-da-massi-pueblo",
+        "name": "La Forchetta Da Massi", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/wvsyEbbKI049FMFcfSk0kQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/la-forchetta-da-massi-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 239, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "wine_bars", "title": "Wine Bars"}], "rating": 4.7, "coordinates":
+        {"latitude": 38.2645118031982, "longitude": -104.613206125796}, "transactions":
+        ["delivery"], "price": "$$", "location": {"address1": "126 S Union Ave", "address2":
+        "", "address3": null, "city": "Pueblo", "zip_code": "81003", "country": "US",
+        "state": "CO", "display_address": ["126 S Union Ave", "Pueblo, CO 81003"]},
+        "phone": "+17192530126", "display_phone": "(719) 253-0126", "distance": 3543.313323844259},
+        {"id": "C7-zN-vSl7M1mFDE2ZVV9g", "alias": "guss-place-pueblo", "name": "Gus''s
+        Place", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/0qWyZZAzApC-TgSW2wCJ8Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/guss-place-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 20, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "bars", "title": "Bars"}], "rating": 4.6, "coordinates": {"latitude":
+        38.24588, "longitude": -104.613}, "transactions": [], "price": "$", "location":
+        {"address1": "1201 Elm St", "address2": null, "address3": null, "city": "Pueblo",
+        "zip_code": "81004", "country": "US", "state": "CO", "display_address": ["1201
+        Elm St", "Pueblo, CO 81004"]}, "phone": "+17192258538", "display_phone": "(719)
+        225-8538", "distance": 4404.963933497}, {"id": "00v_eq2dOtTQ2eYp1B76sA", "alias":
+        "do-drop-inn-pueblo", "name": "Do Drop Inn", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/H0jVhQXSDh6EdF2PeBgbkA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/do-drop-inn-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 88, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "tradamerican",
+        "title": "American"}], "rating": 3.7, "coordinates": {"latitude": 38.24596533522696,
+        "longitude": -104.60678972897698}, "transactions": ["delivery", "pickup"],
+        "price": "$$", "location": {"address1": "1201 S Santa Fe Ave", "address2":
+        "", "address3": "", "city": "Pueblo", "zip_code": "81006", "country": "US",
+        "state": "CO", "display_address": ["1201 S Santa Fe Ave", "Pueblo, CO 81006"]},
+        "phone": "+17195420818", "display_phone": "(719) 542-0818", "distance": 3993.4097319257467},
+        {"id": "6o0kxtwuJkVePqcFrNOgmw", "alias": "angelos-pizza-parlor-pueblo-4",
+        "name": "Angelo''s Pizza Parlor", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/i7DHdorguc8YPvCAjFF_Lw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/angelos-pizza-parlor-pueblo-4?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 342, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "italian", "title": "Italian"}], "rating": 2.9, "coordinates": {"latitude":
+        38.265812, "longitude": -104.611277}, "transactions": ["delivery", "pickup"],
+        "price": "$$", "location": {"address1": "105 E Riverwalk", "address2": "",
+        "address3": "", "city": "Pueblo", "zip_code": "81003", "country": "US", "state":
+        "CO", "display_address": ["105 E Riverwalk", "Pueblo, CO 81003"]}, "phone":
+        "+17195448588", "display_phone": "(719) 544-8588", "distance": 3352.7019412008635},
+        {"id": "1kRCH5IHpYI9wVsjDJLpLg", "alias": "iannes-pizzeria-pueblo", "name":
+        "Ianne''s Pizzeria", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/QCkqM-FOJC5KVIkOH0q6vA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/iannes-pizzeria-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 42, "categories": [{"alias": "pizza", "title": "Pizza"}, {"alias":
+        "italian", "title": "Italian"}], "rating": 3.4, "coordinates": {"latitude":
+        38.24435, "longitude": -104.61695}, "transactions": ["delivery", "pickup"],
+        "price": "$$", "location": {"address1": "515 W Northern Ave", "address2":
+        "", "address3": "", "city": "Pueblo", "zip_code": "81004", "country": "US",
+        "state": "CO", "display_address": ["515 W Northern Ave", "Pueblo, CO 81004"]},
+        "phone": "+17195425942", "display_phone": "(719) 542-5942", "distance": 4781.079014420717},
+        {"id": "IDGADOenZRArt0dr8ULu8w", "alias": "giodones-italian-bar-and-grill-pueblo-2",
+        "name": "Giodone''s Italian Bar & Grill", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/Mex6t_tLniHpRmt56vazPg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/giodones-italian-bar-and-grill-pueblo-2?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 27, "categories": [{"alias": "italian", "title": "Italian"}],
+        "rating": 3.4, "coordinates": {"latitude": 38.245144, "longitude": -104.55022},
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
+        "23344 E US Highway 50", "address2": "", "address3": null, "city": "Pueblo",
+        "zip_code": "81006", "country": "US", "state": "CO", "display_address": ["23344
+        E US Highway 50", "Pueblo, CO 81006"]}, "phone": "+17195429751", "display_phone":
+        "(719) 542-9751", "distance": 3462.628063622551}, {"id": "Jt5PaEqASfdkSCShenksLA",
+        "alias": "ajs-at-walking-stick-pueblo", "name": "AJ''s At Walking Stick",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/mnCFX-gY782iSf4nfNyK1Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/ajs-at-walking-stick-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 14, "categories": [{"alias": "tradamerican", "title": "American"},
+        {"alias": "italian", "title": "Italian"}], "rating": 4.2, "coordinates": {"latitude":
+        38.3140902796849, "longitude": -104.581170705055}, "transactions": [], "location":
+        {"address1": "4301 Walking Stick Blvd", "address2": "", "address3": "", "city":
+        "Pueblo", "zip_code": "81001", "country": "US", "state": "CO", "display_address":
+        ["4301 Walking Stick Blvd", "Pueblo, CO 81001"]}, "phone": "+17195531187",
+        "display_phone": "(719) 553-1187", "distance": 4900.564877863412}, {"id":
+        "WITLQqcBI6gMqP1rPAOTXQ", "alias": "collettes-catering-carry-out-pueblo",
+        "name": "Collette''s Catering-Carry Out", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/HJWfmZiSDUONUu9t5Oua5Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/collettes-catering-carry-out-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 29, "categories": [{"alias": "italian", "title": "Italian"}],
+        "rating": 4.1, "coordinates": {"latitude": 38.24393, "longitude": -104.6307},
+        "transactions": ["delivery"], "price": "$", "location": {"address1": "1614
+        W Northern Ave", "address2": "", "address3": "", "city": "Pueblo", "zip_code":
+        "81004", "country": "US", "state": "CO", "display_address": ["1614 W Northern
+        Ave", "Pueblo, CO 81004"]}, "phone": "+17195432467", "display_phone": "(719)
+        543-2467", "distance": 5806.671432166984}, {"id": "K9EL2Elh2dn0zIhSw73_kg",
+        "alias": "olive-garden-italian-restaurant-pueblo-2", "name": "Olive Garden
+        Italian Restaurant", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ZFRyqeeFXvJV3tJMJ43MjA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/olive-garden-italian-restaurant-pueblo-2?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 74, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "salad", "title": "Salad"}, {"alias": "soup", "title": "Soup"}],
+        "rating": 3.3, "coordinates": {"latitude": 38.303761, "longitude": -104.614001},
+        "transactions": [], "price": "$$", "location": {"address1": "3240 N Elizabeth
+        St", "address2": "", "address3": "", "city": "Pueblo", "zip_code": "81008",
+        "country": "US", "state": "CO", "display_address": ["3240 N Elizabeth St",
+        "Pueblo, CO 81008"]}, "phone": "+17192530033", "display_phone": "(719) 253-0033",
+        "distance": 5130.284535255334}, {"id": "OFX_AW60mL82nnyfyoRvqA", "alias":
+        "pasta-cottage-pueblo", "name": "Pasta Cottage", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/-U3W1BXJcmCaHjDkO_1o1Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/pasta-cottage-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 14, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "chicken_wings", "title": "Chicken Wings"}], "rating": 5.0, "coordinates":
+        {"latitude": 38.23984, "longitude": -104.61524}, "transactions": ["delivery"],
+        "price": "$", "location": {"address1": "1525 E Evans Ave", "address2": "",
+        "address3": "", "city": "Pueblo", "zip_code": "81004", "country": "US", "state":
+        "CO", "display_address": ["1525 E Evans Ave", "Pueblo, CO 81004"]}, "phone":
+        "+17195640095", "display_phone": "(719) 564-0095", "distance": 4998.380893154989},
+        {"id": "EvCvvR6JIkvk1WJoyBVKNg", "alias": "la-tronicas-pueblo-3", "name":
+        "La Tronica''s", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Vjlu6L_CelHqmR3l1gmyZw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/la-tronicas-pueblo-3?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 37, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "sandwiches", "title": "Sandwiches"}, {"alias": "italian", "title":
+        "Italian"}], "rating": 3.2, "coordinates": {"latitude": 38.246208190918, "longitude":
+        -104.614181518555}, "transactions": ["delivery"], "price": "$$", "location":
+        {"address1": "1143 E Abriendo Ave", "address2": "", "address3": "", "city":
+        "Pueblo", "zip_code": "81004", "country": "US", "state": "CO", "display_address":
+        ["1143 E Abriendo Ave", "Pueblo, CO 81004"]}, "phone": "+17195421113", "display_phone":
+        "(719) 542-1113", "distance": 4471.231186497275}, {"id": "qEo6bSdlqB3YwrNhA4FH8A",
+        "alias": "mauros-kitchen-pueblo", "name": "Mauro''s Kitchen", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/rcOzd71FEiwtM8x_7n3GqA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/mauros-kitchen-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 19, "categories": [{"alias": "mexican", "title": "Mexican"},
+        {"alias": "italian", "title": "Italian"}, {"alias": "tradamerican", "title":
+        "American"}], "rating": 2.5, "coordinates": {"latitude": 38.287193, "longitude":
+        -104.584425}, "transactions": ["delivery", "pickup"], "price": "$", "location":
+        {"address1": "2104 N Norwood Ave", "address2": null, "address3": "", "city":
+        "Pueblo", "zip_code": "81001", "country": "US", "state": "CO", "display_address":
+        ["2104 N Norwood Ave", "Pueblo, CO 81001"]}, "phone": "+17195420886", "display_phone":
+        "(719) 542-0886", "distance": 2098.543201698069}, {"id": "rIBCPv5I_ytRZEVjjnve0g",
+        "alias": "toni-and-joes-pizza-pueblo-2", "name": "Toni & Joes Pizza", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/gfzKFh3KB1Sw9-BC68eKGA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/toni-and-joes-pizza-pueblo-2?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 70, "categories": [{"alias": "pizza", "title": "Pizza"}, {"alias":
+        "italian", "title": "Italian"}, {"alias": "sandwiches", "title": "Sandwiches"}],
+        "rating": 2.8, "coordinates": {"latitude": 38.2297554016113, "longitude":
+        -104.663619995117}, "transactions": ["delivery"], "price": "$$", "location":
+        {"address1": "2039 Columbia Dr", "address2": "", "address3": "", "city": "Pueblo",
+        "zip_code": "81005", "country": "US", "state": "CO", "display_address": ["2039
+        Columbia Dr", "Pueblo, CO 81005"]}, "phone": "+17195610030", "display_phone":
+        "(719) 561-0030", "distance": 9099.885536943812}, {"id": "ypLmr8eiYRHpwcyE9NzbCw",
+        "alias": "chicken-n-pasta-pueblo-2", "name": "Chicken N Pasta", "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/iq4R3-1CgLaBbIRoeDPl8w/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/chicken-n-pasta-pueblo-2?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 4, "categories": [{"alias": "italian", "title": "Italian"}],
+        "rating": 4.0, "coordinates": {"latitude": 38.2751198, "longitude": -104.5862198},
+        "transactions": ["delivery", "pickup"], "location": {"address1": "1407 E 8th
+        St", "address2": "", "address3": "", "city": "Pueblo", "zip_code": "81001",
+        "country": "US", "state": "CO", "display_address": ["1407 E 8th St", "Pueblo,
+        CO 81001"]}, "phone": "+17195447008", "display_phone": "(719) 544-7008", "distance":
+        1235.6466722001667}, {"id": "6UIp5Jn_gtBfa2gN7EkLNA", "alias": "rosarios-italian-bistro-pueblo",
+        "name": "Rosario''s Italian Bistro", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/tbDN_3HcfuuzP-orLRq37w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/rosarios-italian-bistro-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 24, "categories": [{"alias": "italian", "title": "Italian"}],
+        "rating": 2.5, "coordinates": {"latitude": 38.27744412161528, "longitude":
+        -104.616079}, "transactions": [], "location": {"address1": "1110 W Hwy 50",
+        "address2": "", "address3": null, "city": "Pueblo", "zip_code": "81008", "country":
+        "US", "state": "CO", "display_address": ["1110 W Hwy 50", "Pueblo, CO 81008"]},
+        "phone": "+17192813193", "display_phone": "(719) 281-3193", "distance": 3811.8956495862394},
+        {"id": "XNhCtV7L9t-hbfm66mgtqg", "alias": "fazolis-pueblo", "name": "Fazoli''s",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/H_rLGaNZFYw4yAmeqo5JVA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/fazolis-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 34, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "hotdogs", "title": "Fast Food"}, {"alias": "pizza", "title": "Pizza"}],
+        "rating": 2.8, "coordinates": {"latitude": 38.309985, "longitude": -104.629103},
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
+        "1631 W US Highway 50", "address2": "", "address3": "", "city": "Pueblo",
+        "zip_code": "81008", "country": "US", "state": "CO", "display_address": ["1631
+        W US Highway 50", "Pueblo, CO 81008"]}, "phone": "+17195451123", "display_phone":
+        "(719) 545-1123", "distance": 6557.73783140878}, {"id": "WSqW_JMvW3DLSc-qKJfGuA",
+        "alias": "villa-fresh-italian-kitchen-pueblo", "name": "Villa Fresh Italian
+        Kitchen", "image_url": "", "is_closed": false, "url": "https://www.yelp.com/biz/villa-fresh-italian-kitchen-pueblo?adjust_creative=cFXg5eXCiGf1wo8WKUr1pA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cFXg5eXCiGf1wo8WKUr1pA",
+        "review_count": 2, "categories": [{"alias": "italian", "title": "Italian"}],
+        "rating": 2.5, "coordinates": {"latitude": 38.303421, "longitude": -104.6066284},
+        "transactions": ["delivery"], "location": {"address1": "3237 Dillon Dr", "address2":
+        "", "address3": "Pueblo Mall", "city": "Pueblo", "zip_code": "81008", "country":
+        "US", "state": "CO", "display_address": ["3237 Dillon Dr", "Pueblo Mall",
+        "Pueblo, CO 81008"]}, "phone": "+17195440999", "display_phone": "(719) 544-0999",
+        "distance": 4569.94046328584}], "total": 17, "region": {"center": {"longitude":
+        -104.5733642578125, "latitude": 38.27035217485165}}}'
+  recorded_at: Tue, 06 Aug 2024 16:46:42 GMT
 recorded_with: VCR 6.2.0
