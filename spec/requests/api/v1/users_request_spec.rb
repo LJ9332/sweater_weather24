@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "can create a new user" do
+describe "User Request" do
   it "returns a new user" do
     user_params = ({
       email: "test@test.com",
