@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Forecast API" do
+describe "Forecast Request" do
   it "sends daily, hourly, and current weather" do 
     VCR.use_cassette('forecast_api_OH') {
       get '/api/v1/forecast?location=cincinatti,oh'
