@@ -6,7 +6,7 @@ RSpec.describe "Sessions Request" do
       @user = User.create!(email: "test@test.com", password: "test123", password_confirmation: "test123") 
     end
 
-    xit 'can start a session' do 
+    it 'can start a session' do 
       user_params = {
           email: "test@test.com",
           password: "test123"
