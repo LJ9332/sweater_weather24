@@ -15,11 +15,8 @@ class RoadTripFacade
       return Roadtrip.new(start_city, end_city, "impossible route", {})
     else
       formatted_travel_time = travel_data[:route][:formattedTime]
-      arrival_time = Time.now + travel_time #find weather at this time
-   
-      # iterate all the days, make sure dates match
-      # iterate through all the hours, and find the hour that matches the arrival time
-      # create a hash with the data from that hour
+      arrival_time = Time.now + travel_time 
+      
       forecast_data[:forecast][:forecastday].each do |day|
         next unless arrival_time.to_s.include?(day[:date])
       

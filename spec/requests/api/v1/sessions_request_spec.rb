@@ -8,9 +8,9 @@ RSpec.describe "Sessions Request" do
 
     it 'can start a session' do 
       user_params = {
-          email: "test@test.com",
-          password: "test123"
-        }
+        email: "test@test.com",
+        password: "test123"
+      }
       
       post "/api/v1/sessions", params: user_params, as: :json
 
