@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :forecast, only: [:index, :show]
+      resources :users, only: [:create]
+      resources :sessions, only: [:create]
       get "/munchies", to: "search#index"
+      post :road_trip, to: 'road_trip#create'
     end
   end
 end
